@@ -151,23 +151,32 @@ router.get('/countries/:id', async function (req, res) {
 	}
 });
 
-router.post('/activity', async (req, res) => {
-	let { name, difficulty, duration, season, countriesId } = req.body;
-
-	const createActivity = await Activity.create({
-		name,
-		difficulty,
-		duration,
-		season,
-	});
-
-	if (countriesId) {
-
-		await createActivity.addCountries(countriesId); 
-	} 
-
-	return res.status(200).json({ mesage: 'exito', createActivity });
-});
+router.post('/activities', async (req, res,) => {
+    try {
+      const {name, difficulty, duration, season, countries} = req.body
+      if(name && difficulty && duration && season && countries){
+          const activity = await Activity.create({
+                  name,
+                  difficulty,
+                  duration,
+                  season         
+              });
+  
+          countries.forEach(async (id) => {
+              const country = await Country.findOne({
+                  where: {id: {[Op.iLike]:`%${id}%`}}
+                      })
+              await country?.addActivity(activity);
+          })
+  
+          return res.send(activity)
+      } else {
+          return res.status(404).json('Missing data')
+      }
+  } catch (error) {
+      next(error)
+  }
+  }
+  )
 
 module.exports = router;
-// HASTA ACA VA MI TRABAJO SIN MODULARIZAR 

@@ -3,7 +3,7 @@ import LandingPage from './Components/LandingPage';
 import Home from './Components/Home';
 import ActivityCreate from './Components/ActivityCreate';
 import Detail from './Components/Detail';
-// import Navbar from './Components/Navbar';
+import Navbar from './Components/Navbar';
 // import About from './Components/About';
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
 					<Switch>
 						<Route exact path='/' component={LandingPage}></Route>
 						<Route path='/'>
-							{/* <Navbar /> */}
+							<Navbar />
 							<Route exact path='/home' component={Home}></Route>
 							<Route exact path='/detail/:id' component={Detail}></Route>
 							<Route

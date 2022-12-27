@@ -11,9 +11,9 @@ import {
 } from '../Redux/actions';
 import Card from './Card';
 import Search from './Search';
-import Paginado from './Paginado';
+import Paginated from './Paginated';
 import { Link } from 'react-router-dom';
-
+import s from './Home.module.css'
 
 const Home = () => {
 	const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const Home = () => {
 		setOrderPopulation(`Ordenado ${e.target.value}`);
 	};
 
-	const paginado = (pageNumber) => {
+	const paginated = (pageNumber) => {
 		setCurrentPage(pageNumber);
 	};
 
@@ -63,27 +63,31 @@ const Home = () => {
 
 	return (
 		<div>
-			<div className='select'>
-				<select onChange={(e) => handleOrderP(e)}>
+			<div className={s.filters}>
+
+			
+				<select className={s.itemHome} onChange={(e) => handleOrderP(e)}>
 					<option value=''>Ordenar por población</option>
 					<option value='Asc'>Poblacion Ascendente</option>
 					<option value='Des'>Poblacion Descendente</option>
 				</select>
+				
 
-				<select onChange={(e) => handleOrderN(e)}>
+				<select className={s.itemHome} onChange={(e) => handleOrderN(e)}>
 					<option value='Asc'>Ordenadar País Asc-Des</option>
 					<option value='Asc'>Asc</option>
 					<option value='Des'>Des</option>
 				</select>
 
-				<select onChange={(e) => handleByActivity(e)}>
+				<select className={s.itemHome} onChange={(e) => handleByActivity(e)}>
 					<option value='Nothing'>Seleccionar Actividades</option>
 					<option value='All'>All</option>
 					{activities.map((i) => (
 						<option value={i.name}>{i.name}</option>
 					))}
 				</select>
-				<select onChange={(e) => handleContinents(e)}>
+
+				<select className={s.itemHome} onChange={(e) => handleContinents(e)}>
 					<option value='All'>Seleccionar continentes..</option>
 					<option value='All'>Todos los continents..</option>
 					<option value='South America'>South America</option>
@@ -94,19 +98,21 @@ const Home = () => {
 					<option value='Oceania'>Oceania</option>
 					<option value='Antarctica'>Antarctica</option>
 				</select>
-			</div>
-			<Search />
 
-			<Paginado
+				
+			</div>
+			
+
+			<Paginated
 				countries={countries.length}
 				couPerPage={couPerPage}
-				paginado={paginado}
+				paginated={paginated}
 			/>
 
-			<div className='cards-container'>
+			<div className={s.containerCards}>
 				{!loading ? (
 					allpages.map((i) => (
-						<div className='contenedor'>
+						<div className={s.cards}>
 							<Link to={'/detail/' + i.id}>
 								<Card
 									key={i.id}
@@ -130,4 +136,3 @@ const Home = () => {
 
 export default Home;
 
-///https://github.com/dianaibarra98/PI-COUNTRIES/blob/main/client/src/components/Home/Home.jsx#L43
