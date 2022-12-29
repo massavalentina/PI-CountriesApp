@@ -23,7 +23,7 @@
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
-    background-color: rgba(152, 151, 151, 0.34);
+    background-color: #5390D9;
     overflow: hidden;
     box-shadow: 0 0 0 0 transparent;
     -webkit-transition: all 0.2s ease-in;
@@ -32,8 +32,8 @@
   }
   
   .item:hover {
-    background: rgb(43, 43, 43);
-    box-shadow: 0 0 30px 5px rgba(120, 120, 121, 0.815);
+    background: #5390D9;
+ 
     -webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
@@ -55,7 +55,7 @@
     left: 0%;
     opacity: 0;
     background: rgb(117, 117, 117);
-    box-shadow: 0 0 50px 30px rgb(107, 107, 107);
+    box-shadow: 0 0 50px 30px #9bf0fc;
     -webkit-transform: skewX(-20deg);
     -moz-transform: skewX(-20deg);
     -ms-transform: skewX(-20deg);

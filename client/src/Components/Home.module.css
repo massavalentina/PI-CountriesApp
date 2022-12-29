@@ -1,6 +1,17 @@
-
+  .mainDiv {
+  background: linear-gradient(to top left, #9bf0fc, #5390D9);
+  margin: 0;
+  padding: 0;
+  height: 135vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  }
 
     .filters{
+        
         margin-top: 20px;
         display: flex;
         justify-content: center;
@@ -28,19 +39,20 @@
 
     .itemHome {
         cursor: pointer;
-        color: white;
+        font-family: Cairo Play;
         list-style: none;
         position: relative;
         margin: 3px;
-        padding: 10px 20px;
+        padding: 5px 10px;
         border-radius: 7px;
-        border: 1px solid rgb(255, 255, 255);
+        border: 2px solid #3d7cca;
+        color: rgb(234, 242, 248);
         font-size: 16px;
         text-transform: uppercase;
-        font-weight: 600;
-        letter-spacing: 2px;
-        background-color: rgba(152, 151, 151, 0.34);
-        color: #fff;
+        font-weight: 530;
+        letter-spacing: 1px;
+        background-color: #5390D9;
+        
         overflow: hidden;
         box-shadow: 0 0 0 0 transparent;
         -webkit-transition: all 0.2s ease-in;

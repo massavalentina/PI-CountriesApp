@@ -1,25 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import style from './Card.module.css'
 
 
 
-export default function Card({image, name, continent, id}) {
+
+export default function Card({flag, name, continents}) {
     return (
         <div className={style.container}>
-          
+
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
+          <div className={style.itemsC}>
                 <div className={style.imgContainer}>
-                    <img  src={image} alt="Imagen no disponible" />
+                    <img  src={flag} alt="Imagen no disponible" />
                 </div> 
 
                 <div className={style.infoContainer}>
-                <Link to={`/home/${id}`}>
-                    <span className='name'>{name}</span> 
-                </Link>
-                    <h5>{continent}</h5>
+            
+                    <h3 >{name}</h3> 
+                
+                    <h4>{continents}</h4>
                 </div>
-
-                <Link to={`/home/${id}`}><button> Ver Más </button> </Link>
+        </div>
+                
                       
         </div>
     );

@@ -1,36 +1,37 @@
 .navbar{
-    background-color: rgba(104, 100, 100, 0.473);
+    background-color: #4985cf;
     display: flex;
     height: 50px;
-    border-bottom: 1px solid black;
-    width: 196vh ;
-    justify-content: center;
-    gap: 0px;
     align-items: center;
-    
 }
-
-
-
-.links{ 
-   text-decoration: none;
-    margin: 20px ;
-    font-size: 14px;
-    color: white;
-    position: relative;
-    padding: 7px 20px;
-    border-radius: 7px;
-    border: 1px solid rgba(88, 88, 88, 0.589);
-    text-transform: uppercase;
-    font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.34);
-    color: #fff;
-}
-
 
 .title{
     text-decoration: none;
+   font-family: Cairo Play;
+   font-size: 30px;
+   margin: 30px;
+   margin-right: 600px;
 }
+
+.buttons{
+    font-family: Cairo Play;
+    text-decoration: none;
+    margin: 10px ;
+    font-size: 14px;
+    position: relative;
+    padding: 5px 15px;
+    border-radius: 7px;
+    border: 2px solid #3d7cca;
+    color: rgb(234, 242, 248);
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: #5390D9;
+   
+}
+
+
+
+
 
 
 

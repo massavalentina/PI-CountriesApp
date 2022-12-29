@@ -46,7 +46,7 @@ export const getDetail = (id) => {
 	};
 };
 
-export const getCoutryName = (payload) => {
+export const getCountryName = (payload) => {
 		return async (dispatch) => {
 		
 			const { data } = await axios(`/countries?name=${payload}`);

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCoutryName, byContinents, getDetail } from '../Redux/actions';
+import { getCountryName, byContinents} from '../Redux/actions';
 import s from './Search.module.css'
 
 const Search = () => {
@@ -22,7 +22,7 @@ const Search = () => {
 
 
 	useEffect(() => {
-		dispatch(getCoutryName(name));
+		dispatch(getCountryName(name));
 	}, [dispatch, name]);
 
 		useEffect(() => {

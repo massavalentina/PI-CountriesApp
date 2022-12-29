@@ -62,7 +62,14 @@ const Home = () => {
 	}, [dispatch]);
 
 	return (
-		<div>
+		
+		
+		<div className={s.mainDiv}>
+
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
+
 			<div className={s.filters}>
 
 			
@@ -103,11 +110,7 @@ const Home = () => {
 			</div>
 			
 
-			<Paginated
-				countries={countries.length}
-				couPerPage={couPerPage}
-				paginated={paginated}
-			/>
+			
 
 			<div className={s.containerCards}>
 				{!loading ? (
@@ -117,7 +120,7 @@ const Home = () => {
 								<Card
 									key={i.id}
 									name={i.name}
-									image={i.img}
+									flag={i.flag}
 									continents={i.continents}
 								/>
 							</Link>
@@ -129,6 +132,11 @@ const Home = () => {
 					</div>
 				)}
 			</div>
+			<Paginated
+				countries={countries.length}
+				couPerPage={couPerPage}
+				paginated={paginated}
+			/>
         </div>
 		
 	);

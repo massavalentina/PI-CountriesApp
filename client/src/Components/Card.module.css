@@ -1,6 +1,8 @@
 .container {
-    /* background-color: var(--color-gray); */
+    
+   font-family: Cairo Play;
     color: #fff;
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -9,27 +11,21 @@
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     transition: background-color 0.5s, transform 0.5s;
-    border: 2px solid #fff;
+    border: 2px solid #5390D9;
+
 }
 
 .container:hover {
     cursor: pointer;
-    transform: scale(1.05);
-    background-color: #0d0c10;
+    transform: scale(1.2);
+    background-color: #5390D9;
 }
 
 .infoContainer {
-    height: 100%;
-  
+    
 }
 
-.container h4 {
-    margin: 0;
-    margin: 0;
-    padding: 0;
-    height: 123vh;
-   
-}
+
 
 .imgContainer img{
     width: 100%;
@@ -37,8 +33,12 @@
     object-fit: cover;
 }
 
-h4.nameCountry {
-    color: var(--name-countries);
-    margin-bottom: 0.4rem;
-    
-}
+
+
+
+
+
+
+
+
+

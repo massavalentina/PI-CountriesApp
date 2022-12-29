@@ -9,17 +9,20 @@ function Navbar() {
 
 	return (
         <div>
-			
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
 
 			<div className={s.navbar}>
 
 			<div className={s.title}>
-					COUNTRIES APP
+				
+					Countries App
 			</div>
 
 						
 							<NavLink exact to='/home'>
-							<div className={s.links}>
+							<div className={s.buttons}>
 							Home
 							</div>	
 							</NavLink>
@@ -28,7 +31,7 @@ function Navbar() {
 						
 
 							<NavLink exact to='/create/activity'>
-							<div className={s.links}>
+							<div className={s.buttons}>
 							Create Activity 
 							</div>
 							</NavLink>
@@ -36,7 +39,7 @@ function Navbar() {
 
 						
 							<NavLink exact to='/about'>
-								<div className={s.links}>
+								<div className={s.buttons}>
 								About
 								</div>
 							</NavLink>

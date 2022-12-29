@@ -12,15 +12,15 @@
 }
 
 .item{
-    color: white;
+    text-decoration: none;
+    font-size: 14px;
     position: relative;
-    margin: 3px;
-    padding: 10px 20px;
+    padding: 7px 15px;
     border-radius: 7px;
-    border: 1px solid rgba(88, 88, 88, 0.589);
+    border: 2px solid #3d7cca;
+    color: rgb(234, 242, 248);
     text-transform: uppercase;
     font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.34);
-    color: #fff;
+    background-color: #5390D9;
    
 }
