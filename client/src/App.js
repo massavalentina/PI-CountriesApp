@@ -18,11 +18,7 @@ const App = () => {
 							<Navbar />
 							<Route exact path='/home' component={Home}></Route>
 							<Route exact path='/detail/:id' component={Detail}></Route>
-							<Route
-								exact
-								path='/create/activity'
-								component={ActivityCreate}
-							></Route>
+							<Route exact path='/create/activities'component={ActivityCreate}></Route>
 							{/* <Route exact path='/about' component={About}></Route> */}
 						</Route>
 					</Switch>

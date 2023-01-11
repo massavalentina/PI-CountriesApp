@@ -1,0 +1,160 @@
+
+.background {
+    background: linear-gradient(to top left, #9bf0fc, #5390D9);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+.container{
+
+	background: whitesmoke;
+	text-align: center;
+	border-radius: 5px;
+	overflow: hidden;
+	margin: 5em auto;
+	height: 450px;
+	width: 850px;
+  border-radius: 20px;
+  padding: 10px;
+	
+}
+
+.button{
+  font-family: Cairo Play;
+  
+  background-color: #5390D9;
+ 
+  
+  border-radius: 25px;
+  padding: 15px;
+  
+  
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+
+  font-family: Cairo Play;
+	margin-left: 50px;
+	
+	color: #344055;;
+  text-transform: uppercase;
+  border-color: #5390D9;
+  font-weight: 600
+  
+}
+
+.productdetails {
+	position: relative;
+	text-align: left;
+	overflow: hidden;
+	padding: 30px;
+	height: 100%;
+	float: left;
+	width: 40%;
+  
+}
+
+.container .productdetails h1{
+ 
+  font-size: 36px;
+  text-align: center;
+  font-weight: 800;
+  color: #3e90d0;
+ 
+	font-family: Cairo Play;
+	display: inline-block;
+	position: relative;
+	font-size: 30px;
+	
+	margin: 0;
+	text-transform: uppercase;
+  text-align: center;
+	font-size: 30px;
+	
+  line-height: 30px;
+  margin-left: 70px;
+}
+
+
+.container .productdetails > p {
+  font-family: Cairo Play;
+	text-align: left;
+	font-size: 19px;
+	color: #344055;
+  text-transform: uppercase;
+  line-height: 30px;
+	
+}
+
+
+
+.productimage {
+
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+
+	width: 45%;
+	display: inline-block;
+}
+
+.container img {
+  width: 400px;
+  height: 250px;
+  margin-top: 100px;
+}
+
+.container .info {
+ 
+  
+  font-family: Cairo Play;
+  margin: 0px;
+  background-color: #5390D9;
+  gap: 5px;
+  
+  border-radius: 25px;
+  padding: 10px;
+ 
+  
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+
+  font-family: Cairo Play;
+	text-align: center;
+	
+	color: #344055;
+  text-transform: uppercase;
+  line-height: 10px;
+  font-weight: 700;
+
+}
+
+.container .cAct {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 30px;
+  margin-left: 60px;
+  
+}
+
+
+
+.productimage:hover  {transition: all 0.3s ease-out;}
+.productimage:hover  {transform: scale(1.2, 1.2);}
+
+.noAct {
+  font-family: Cairo Play;
+  text-transform: uppercase;
+  color: #ba0f0f;
+  font-size: 20px;
+}

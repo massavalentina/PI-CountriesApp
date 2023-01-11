@@ -15,42 +15,41 @@ function Navbar() {
 
 			<div className={s.navbar}>
 
-			<div className={s.title}>
-				
+				<div className={s.title}>
 					Countries App
-			</div>
-
-						
-							<NavLink exact to='/home'>
-							<div className={s.buttons}>
-							Home
-							</div>	
-							</NavLink>
-						
-
-						
-
-							<NavLink exact to='/create/activity'>
-							<div className={s.buttons}>
-							Create Activity 
-							</div>
-							</NavLink>
-					
-
-						
-							<NavLink exact to='/about'>
-								<div className={s.buttons}>
-								About
-								</div>
-							</NavLink>
-						
-
-						<div>
-						<Search/>
-						</div>
-					
+				</div>
 				
+				<div>
+					<NavLink exact to='/home'>
+						<div className={s.buttonsH}>
+							Home
+						</div>	
+					</NavLink>
+				</div>        
+
+							
+				<div>
+					<NavLink exact to='/create/activities'>
+						<div className={s.buttons}>
+							Create Activity 
+						</div>
+					</NavLink>
+				</div>	
+
+				<div>
+					<NavLink exact to='/about'>
+						<div className={s.buttons}>
+							About
+						</div>
+					</NavLink>
+				</div>
+
+				<div>
+					<Search/>
+				</div>
+					
 			</div>
+			
 		</div>
 	);
 }

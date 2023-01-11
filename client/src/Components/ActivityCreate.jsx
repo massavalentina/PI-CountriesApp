@@ -2,39 +2,47 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createActivity, getAllCountries } from '../Redux/actions';
-import s from "./ActivityCreate.module.css"
 import Modal from './Modal';
+import s from './ActivityCreate.module.css'
+
 
 const validator = (input) => {
 	let errors = {};
 	if (!input.name) {
-		errors.name = 'Por favor ingrese un nombre';
+		errors.name = 'Please enter a name';
 	}
 	if (!input.difficulty) {
-		errors.difficulty = 'por favor ingrese un nivel de dificultad';
+		errors.difficulty = 'Please enter a difficulty level';
 	}
 	if (input.duration < 1) {
-		errors.duration = 'por favor ingrese una duracion mayor a 1 hora';
+		errors.duration = 'Please enter a duration higher than one hour';
 	}
 	if (!input.season) {
-		errors.season = 'por favor seleccione una temporada';
+		errors.season = 'Please select a season';
 	}
 	return errors;
 };
 
 const ActivityCreate = () => {
 	const dispatch = useDispatch();
+
 	const country = useSelector((e) => e.countries);
+
+
+
 	const [errors, setErrors] = useState({});
+
 	const [showModal, setShowModal] = useState(false);
+
 	const [input, setInput] = useState({
 		name: '',
 		difficulty: '',
 		duration: '',
 		season: '',
-		countriesId: [],
+		countries: [],
 	});
-	console.log(input);
+	
+	console.log(input.countries);
 
 	const handleChange = (e) => {
 		setInput({
@@ -65,9 +73,10 @@ const ActivityCreate = () => {
 	const handleSelect = (e) => {
 		setInput({
 			...input,
-			countriesId: [...input.countriesId, e.target.value],
+			countries: [...input.countries, e.target.value],
 		});
 	};
+	console.log(country)
 
 
 	const handleSubmit = (e) => {
@@ -78,7 +87,7 @@ const ActivityCreate = () => {
 			difficulty: '',
 			duration: '',
 			season: '',
-			countriesId: [],
+			countries: [],
 		});
 		setShowModal(true);
 	};
@@ -87,50 +96,65 @@ const ActivityCreate = () => {
 		dispatch(getAllCountries());
 	}, [dispatch]);
 
-
-    function handleDelete(e){
-        setInput({
-            ...input,
-            countries: input.countries.filter( con => con !== e)
-        })
-    }
-
+	const handleDelete = (e) => {
+		setInput({
+			...input,
+			countries : input.countries.filter(d => d !== e)
+		})
+	}
 	return (
-	
-			<div>
-				<Link to='/home'>
-					<button className='volver'>Volver</button>
-				</Link>
-				<h1>Create Activities</h1>
-				{showModal && (
-					<Modal setShowModal={setShowModal} showModal={showModal} />
-				)}
+		
+			<div className={s.backgroundForm}>
 
+				<link rel="preconnect" href="https://fonts.googleapis.com"/>
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+				<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
+
+				<Link to='/home'>
+					<button className={s.btn1}>Volver</button>
+				</Link>
+				
+				{showModal && (
+						<Modal setShowModal={setShowModal} showModal={showModal} />
+					)}
+
+				<div className={s.container}>
+					<h1>Create Activities</h1>
+					
+					
+				
 				<form onSubmit={(e) => handleSubmit(e)}>
 					<div>
-						<label>Nombre : </label>
+						{errors.name && (
+						<div className={s.error}>
+							{errors.name} 
+						</div>
+						)}
+						<label>Name : </label>
 						<input
-							placeholder=' Nombre de la actividad'
+							placeholder='Activity name'
 							required
 							type='text'
 							value={input.name}
 							name='name'
-							onChange={(e) => handleChange(e)}
-						></input>
-						{errors.name && (
-							<p>
-								{errors.name} <i className='fas fa-exclamation-triangle'></i>
-							</p>
-						)}
+							onChange={(e) => handleChange(e)}>
+						</input>
 					</div>
-					<div className='select'>
+
+
+					<div>
+						{errors.difficulty && (
+							<div className={s.error}>
+								{errors.difficulty}{' '}
+							</div>
+						)}
 						<label>Difficulty : </label>
 						<select
 							required
 							onChange={(e) => handleChange(e)}
 							name='difficulty'
-							id=''
-						>
+							id=''>
+
 							<option value=''>Difficulty </option>
 							<option value='1'>Level of Difficulty 1 </option>
 							<option value='2'>Level of Difficulty 2 </option>
@@ -138,74 +162,71 @@ const ActivityCreate = () => {
 							<option value='4'>Level of Difficulty 4 </option>
 							<option value='5'>Level of Difficulty 5 </option>
 						</select>
-						{errors.difficulty && (
-							<p>
-								{errors.difficulty}{' '}
-								<i className='fas fa-exclamation-triangle'></i>
-							</p>
-						)}
 					</div>
+
 					<div>
-						<label>Duracion : </label>
+						{errors.duration && (
+							<div className={s.error}>
+								{errors.duration}{' '}
+							</div>
+						)}
+						<label>Duration : </label>
 						<input
 							required
-							placeholder=' Duracion aproximada en horas'
+							placeholder='Duration in hours'
 							type='number'
 							value={input.duration}
 							name='duration'
-							onChange={(e) => handleChange(e)}
-						></input>
-						{errors.duration && (
-							<p>
-								{errors.duration}{' '}
-								<i className='fas fa-exclamation-triangle'></i>
-							</p>
-						)}
+							onChange={(e) => handleChange(e)}>
+						</input>
 					</div>
+					
 					<div>
-						<h2>Temporada</h2>
-					</div>
-					<div className='select'>
-						<label>
+						{errors.season && (
+						<div className={s.error}>
+							{errors.season} 
+						</div>
+						)}
+						<label>Season :</label>
 							<select required onChange={(e) => handleCheck(e)}>
 								<option value=''>Select season</option>
-								<option value='Verano'>Verano</option>
-								<option value='Otoño'>Otoño</option>
-								<option value='Invierno'>Invierno</option>
-								<option value='Primavera'>Primavera</option>
-								
-							</select>
-						</label>
-
-						{errors.season && (
-							<p>
-								{errors.season} <i className='fas fa-exclamation-triangle'></i>
-							</p>
-						)}
+								<option value='Verano'>Summer</option>
+								<option value='Otoño'>Autum</option>
+								<option value='Invierno'>Winter</option>
+								<option value='Primavera'>Spring</option>
+							 </select>
 					</div>
-					<div className='select'>
-						<select required onChange={(e) => handleSelect(e)}>
+
+					<div className={s.countries}>
+						<select  required onChange={(e) => handleSelect(e)}>
 							<option>select countries</option>
-							{country.map((i) => (
-								<option value={i.id}>{i.name}</option>
+								{country.map((i) => (
+							<option value={i.id}>{i.name}</option>
 							))}
 						</select>
 					</div>
-					
 
-					<button className='submit' type='submit'>
-						Create Activities
+					<div className={s.countryC} >
+						{input.countries.map(e => (
+							<div className={s.country} key={e}>
+								<div>{e}</div>
+								<button onClick={() => handleDelete(e)} className={s.delete}>x</button>
+							</div>
+						))}
+					</div>
+
+					<button className={s.btn} type='submit'>
+						Create
 					</button>
+
 				</form>
-                {input.countries.map(e =>
-                    <div className={s.conpais}>
-                        <p className={s.mpais}> {e} </p>
-                        <button className={s.botelim} onClick={()=> handleDelete(e)}>X </button>
-                    </div>    
-                    )}
 			</div>
-	
+					
+		</div>
+		
 	);
+
+	
 };
 
 //

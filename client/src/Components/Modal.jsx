@@ -1,16 +1,16 @@
 
+import s from './Modal.module.css'
 
 const Modal = ({ showModal, setShowModal }) => {
     return (
         <div>
-            <div className="contenedor">
+            <div className= {s.message}>
            
                  <>
-                 <h2>your activity has been successfully created</h2> 
+                 <h2>Your activity has been successfully created !</h2> 
                  <div>
-                 <i class="far fa-check-circle"></i>
+                
                  </div>
-                <button className="volver" onClick={() => setShowModal(false)} >goBack</button>
                  </>
             
             </div>

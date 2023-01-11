@@ -19,7 +19,7 @@ const initialState = {
 	detail: [],
 };
 
-const rooRducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case CREATE_ACTIVITY:
 			return {
@@ -37,11 +37,7 @@ const rooRducer = (state = initialState, action) => {
 				copiaCountries: action.payload,
 				loading: false,
 			};
-		case GET_ACTIVITIES:
-			return {
-				...state,
-				activities: action.payload,
-			};
+		
 		case SEARCH:
 			return {
 				...state,
@@ -55,28 +51,38 @@ const rooRducer = (state = initialState, action) => {
 		case BY_CONTINENTS:
 			const allCountries = state.copiaCountries;
 			const continentsFlitred =
-				action.payload === 'All'
-					? allCountries
-					: allCountries.filter((i) => i.continents === action.payload);
+				action.payload === 'All'? 
+				allCountries : allCountries.filter((i) => i.continent === action.payload);
 			return {
 				...state,
 				countries: continentsFlitred,
 			};
-		case BY_ACTIVITY:
-			const copia = state.copiaCountries;
-			const acti = state.activities;
-			const filterByActivity =
-				action.payload === 'Nothing'
-					? copia
-					: action.payload === 'All'
-					? copia.filter((i) => i.activities.length > 0)
-					: acti
-							.filter((a) => a.name === action.payload)[0]
-							.countries.map((e) => e);
-			return {
+
+
+
+		case GET_ACTIVITIES:
+				return {
 				...state,
-				countries: filterByActivity,
+				activities: action.payload,
 			};
+
+
+		case BY_ACTIVITY:
+			const allCountriesAct = state.copiaCountries
+            const activitiesFilter = action.payload === 'All' ?
+            allCountriesAct : allCountriesAct.filter(country => 
+                country.activities && country.activities.map(el => el.name).includes(action.payload))
+
+            return{
+                ...state,
+                countries: activitiesFilter
+            }     
+
+			
+
+
+
+
 		case POPULATION_ORDER:
 			const orderByPopulation =
 				action.payload === 'Asc'
@@ -132,4 +138,4 @@ const rooRducer = (state = initialState, action) => {
 	}
 };
 
-export default rooRducer;
+export default rootReducer;

@@ -1,87 +1,95 @@
+  
   .mainDiv {
-  background: linear-gradient(to top left, #9bf0fc, #5390D9);
-  margin: 0;
-  padding: 0;
-  height: 135vh;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  background-size: cover;
+    background: linear-gradient(to top left, #9bf0fc, #5390D9);
+    margin: 0;
+    padding: 0;
+    height: 140vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
   
   }
 
-    .filters{
-        
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        border: none;
+  .filters{
+    display: flex;
+    justify-content: center;
+    border: none;
+  }
 
-
-    }
-
-    .containerCards {
-        margin: 40px;
-        margin-left: 120px;
-        gap: 100px;
-        position: relative;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 300px);
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 90%;
-        
-    }
-
-
-
-
-    .itemHome {
-        cursor: pointer;
-        font-family: Cairo Play;
-        list-style: none;
-        position: relative;
-        margin: 3px;
-        padding: 5px 10px;
-        border-radius: 7px;
-        border: 2px solid #3d7cca;
-        color: rgb(234, 242, 248);
-        font-size: 16px;
-        text-transform: uppercase;
-        font-weight: 530;
-        letter-spacing: 1px;
-        background-color: #5390D9;
-        
-        overflow: hidden;
-        box-shadow: 0 0 0 0 transparent;
-        -webkit-transition: all 0.2s ease-in;
-        -moz-transition: all 0.2s ease-in;
-        transition: all 0.2s ease-in;
+  .itemHome {
+    cursor: pointer;
+    font-family: Cairo Play;
+    list-style: none;
+    position: relative;
+    margin: 10px;
+    padding: 3px 10px;
+    border-radius: 40px;
+    border: 2px solid #3d7cca;
+    color: rgb(234, 242, 248);
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #5390D9;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    margin-top: 15px;
+  }
       
-      }
-      
-      .itemHome:hover::before {
-        -webkit-animation: sh02 0.5s 0s linear;
-        -moz-animation: sh02 0.5s 0s linear;
-        animation: sh02 0.5s 0s linear;
-        content: "";
-        display: block;
-        width: 0px;
-        height: 86%;
-        position: absolute;
-        top: 7%;
-        left: 0%;
-        opacity: 0;
-        background: #fff;
-        box-shadow: 0 0 50px 30px #fff;
-        -webkit-transform: skewX(-20deg);
-        -moz-transform: skewX(-20deg);
-        -ms-transform: skewX(-20deg);
-        -o-transform: skewX(-20deg);
-        transform: skewX(-20deg);
-      }
-      
+  .itemHome:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+    content: "";
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+  }
+
+  .containerCards {
+    margin: 40px;
+    margin-left: 120px;
+    gap: 100px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;  
+  }
+
+
+  .container{
+    width: 250px;
+    height: 250px;
+    border-radius: 20px;
+  }
+  .container:hover {
+
+    cursor: pointer;
+    transform: scale(1.2);
+    background-color: #5390D9;
+}  
+  .cards {
+    text-decoration: none;
+  }
+
       @keyframes sh02 {
         from {
           opacity: 0;
@@ -97,10 +105,61 @@
           left: 100%;
         }
       }
-     
-      .loading{
-        color: white;
-        font-size: 60px;
-        font-family: Pacifico;
-       
+    
+  
+      .button {
+        background-color: #def2fb;
+        border: 0;
+        border-radius: .5rem;
+        box-sizing: border-box;
+        color: #67a2e9cb;
+        font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1.25rem;
+        padding: .50rem 0.5rem;
+        text-align: center;
+        text-decoration: none #D1D5DB solid;
+        text-decoration-thickness: auto;
+        box-shadow: 0 1px 3px 0 rgba(31, 48, 73, 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        font-family: Cairo Play;
+        
       }
+    
+      .button:hover {
+        background-color: rgb(230, 241, 251);  
+        transform: scale(1.2);
+      }
+    
+      .button:focus {
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+    
+      .button:focus-visible {
+        box-shadow: none;
+      }
+
+
+  .loading {
+      margin: 0;
+      padding: 0;
+      color: white;
+      font-size: 60px;
+      font-family: Cairo Play;
+    }
+    
+
+    .buttonD:hover {
+
+      cursor: pointer;
+    
+      background-color: #ffffff;
+  }
+
+
+/* CSS */

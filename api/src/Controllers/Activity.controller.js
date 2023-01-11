@@ -2,32 +2,48 @@ const { Country, Activity } = require('../db.js');
 const { Op } = require('sequelize');
 
 const postActivity = async (req, res) => {
-	const { name, difficulty, duration, season, countries } = req.body;
-	try {
-		if (name && difficulty && duration && season && countries) {
-			const activity = {
-				name,
-				difficulty,
-				season,
-				duration,
-			};
-			const createdActivity = await Activity.create(activity);
-			const infoCountriesName = await Country.findAll({
-				where: {
-					name: countries,
-				},
-				include: Activity
-			})
-			infoCountriesName?.map(a => a.addActivity(createdActivity));
-			res.status(200).send("Se creo correctamente la Actividad");
-		} else {
-			res.status(404).send("Missing parameters");
-		};
-	} catch (error) {
-		console.log(error);
-		res.status(500).json({ message: error });
-	};
+	try{
+		const { name, difficulty, duration, season, countries } = req.body;
+		const newActivity = await Activity.create({
+			name,
+			difficulty,
+			duration,
+			season,
+		});
+		await newActivity.addCountry(countries);
+		res.status(200).send(newActivity);
+	} catch (error){
+		res.status(400).send( {msg: error.message});
+	}
 }
+
+// const postActivity = async (req, res) => {
+// 	const { name, difficulty, duration, season, countries } = req.body;
+// 	try {
+// 		if (name && difficulty && duration && season && countries) {
+// 			const activity = {
+// 				name,
+// 				difficulty,
+// 				season,
+// 				duration,
+// 			};
+// 			const createdActivity = await Activity.create(activity);
+// 			const infoCountriesName = await Country.findAll({
+// 				where: {
+// 					name: countries,
+// 				},
+// 				include: Activity
+// 			})
+// 			infoCountriesName?.map(a => a.addActivity(createdActivity));
+// 			res.status(200).send("Se creo correctamente la Actividad");
+// 		} else {
+// 			res.status(404).send("Missing parameters");
+// 		};
+// 	} catch (error) {
+// 		console.log(error);
+// 		res.status(500).json({ message: error });
+// 	};
+// }
 
 const getActivities = async (req, res) => {
 	try {

@@ -12,7 +12,7 @@ export const GET_ACTIVITIES = 'GET_ACTIVITIES';
 
 export const getAllActivities = () => {
 	return async (dispatch) => {
-		const { data } = await axios('/activity');
+		const { data } = await axios('/activities');
 		return dispatch({
 			type: GET_ACTIVITIES,
 			payload: data,
@@ -46,23 +46,24 @@ export const getDetail = (id) => {
 	};
 };
 
-export const getCountryName = (payload) => {
-		return async (dispatch) => {
-		
-			const { data } = await axios(`/countries?name=${payload}`);
-				return dispatch({
-					type: SEARCH,
-					payload: data,
-			});
-		};
+
+
+export function getCountryName(name) {
+    return async function (dispatch) {
+        try{
+            const {data} = await axios(`/countries?name=${name}`)
+            return dispatch({
+                type: SEARCH,
+                payload: data,
+            })
+        } catch(error){
+            console.log(error)
+        }
+    }
 };
 
 
-
-// return dispatch({
-//   type: SEARCH,
-//   payload:error,
-// })
+ 
 
 export const createActivity = (payload) => {
 	return async (dispatch) => {

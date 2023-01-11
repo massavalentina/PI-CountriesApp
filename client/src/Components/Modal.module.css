@@ -1,0 +1,8 @@
+
+.message{
+    position: absolute;
+    font-size: 10px;
+    margin-left: 40%;
+    margin-bottom: 30px;
+    color: rgb(48, 58, 194);
+}

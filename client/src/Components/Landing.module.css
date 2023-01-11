@@ -23,6 +23,11 @@
     
   }
 
+  .img {
+    position: absolute;
+    height: 500px;
+    margin-left: 900px;
+  }
  
 
 

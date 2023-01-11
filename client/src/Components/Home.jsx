@@ -10,7 +10,6 @@ import {
 	setLoading,
 } from '../Redux/actions';
 import Card from './Card';
-import Search from './Search';
 import Paginated from './Paginated';
 import { Link } from 'react-router-dom';
 import s from './Home.module.css'
@@ -21,7 +20,7 @@ const Home = () => {
 	const loading = useSelector((e) => e.loading); //estados "globales"
 	const activities = useSelector((e) => e.activities); //estados "globales"
 	const [currentPage, setCurrentPage] = useState(1);
-	const [couPerPage] = useState(10);
+	const [couPerPage, setCouPerPage] = useState(9);
 	const indexlast = currentPage * couPerPage;
 	const indexFirst = indexlast - couPerPage;
 	const allpages = countries.slice(indexFirst, indexlast);
@@ -42,9 +41,20 @@ const Home = () => {
 		setOrderPopulation(`Ordenado ${e.target.value}`);
 	};
 
-	const paginated = (pageNumber) => {
-		setCurrentPage(pageNumber);
-	};
+	const paginated = (pageNumber) => 	{
+        if (pageNumber === 1) {
+            setCouPerPage(9);
+            setCurrentPage(pageNumber)
+        } else if (pageNumber > 25) {
+            setCouPerPage(10);
+            setCurrentPage(25)
+        } else {
+            setCouPerPage(10);
+            setCurrentPage(pageNumber)
+        }
+    }
+
+
 
 	const handleContinents = (e) => {
 		dispatch(byContinents(e.target.value));
@@ -61,6 +71,18 @@ const Home = () => {
 		dispatch(setLoading(true));
 	}, [dispatch]);
 
+	// useEffect(() => {
+    //     setCharge(true);
+    //     setTimeout(() => {
+    //         setCharge(false);
+    //     }, 5000);
+    //     dispatch(getAllCountries());
+    // }, []);
+
+    function handleClick (e) {
+        window.location.reload(false);
+    }
+
 	return (
 		
 		
@@ -71,23 +93,22 @@ const Home = () => {
 			<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
 
 			<div className={s.filters}>
-
 			
 				<select className={s.itemHome} onChange={(e) => handleOrderP(e)}>
-					<option value=''>Ordenar por población</option>
-					<option value='Asc'>Poblacion Ascendente</option>
-					<option value='Des'>Poblacion Descendente</option>
+					<option value=''>Population</option>
+					<option value='Asc'>higher population</option>
+					<option value='Des'>lower population</option>
 				</select>
 				
 
 				<select className={s.itemHome} onChange={(e) => handleOrderN(e)}>
-					<option value='Asc'>Ordenadar País Asc-Des</option>
-					<option value='Asc'>Asc</option>
-					<option value='Des'>Des</option>
+					<option value=''>Alphabetical</option>
+					<option value='Asc'>A-Z</option>
+					<option value='Des'>Z-A</option>
 				</select>
 
 				<select className={s.itemHome} onChange={(e) => handleByActivity(e)}>
-					<option value='Nothing'>Seleccionar Actividades</option>
+					<option value='Nothing'>Select activities</option>
 					<option value='All'>All</option>
 					{activities.map((i) => (
 						<option value={i.name}>{i.name}</option>
@@ -95,8 +116,8 @@ const Home = () => {
 				</select>
 
 				<select className={s.itemHome} onChange={(e) => handleContinents(e)}>
-					<option value='All'>Seleccionar continentes..</option>
-					<option value='All'>Todos los continents..</option>
+					<option value=''>Select continents</option>
+					<option value='All'>All continents</option>
 					<option value='South America'>South America</option>
 					<option value='North America'>North America</option>
 					<option value='Europe'>Europe</option>
@@ -106,38 +127,48 @@ const Home = () => {
 					<option value='Antarctica'>Antarctica</option>
 				</select>
 
-				
+				<button  className={s.itemHome} onClick={e =>{handleClick(e)}}>Reload countries</button>
+
 			</div>
 			
-
-			
-
+				<Paginated
+								countries={countries.length}
+								couPerPage={couPerPage}
+								paginated={paginated}
+							/>
 			<div className={s.containerCards}>
-				{!loading ? (
-					allpages.map((i) => (
+
+				{!loading ? 
+				( allpages.map((i) => 
+					(
+					<div className={s.container}>
 						<div className={s.cards}>
-							<Link to={'/detail/' + i.id}>
+							
 								<Card
 									key={i.id}
 									name={i.name}
 									flag={i.flag}
-									continents={i.continents}
+									continent={i.continent}
 								/>
-							</Link>
+							<div>
+								<Link className={s.button} to={'/detail/' + i.id}>MORE INFO</Link>
+							</div>
 						</div>
+					</div>
 					))
 				) : (
-					<div className='contenedor_loading'>
-						<div className='loading'>Loading...</div>
+					<div className={s.containerL}>
+						<div className={s.loading}>Loading...</div>
 					</div>
-				)}
+					)
+				};
+
 			</div>
-			<Paginated
-				countries={countries.length}
-				couPerPage={couPerPage}
-				paginated={paginated}
-			/>
-        </div>
+
+
+			
+
+    	</div>
 		
 	);
 };

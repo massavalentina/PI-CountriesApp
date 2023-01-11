@@ -1,0 +1,167 @@
+.backgroundForm{
+  background: linear-gradient(to top left, #9bf0fc, #5390D9);
+  margin: 0;
+  padding: 0;
+  height: 120vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  
+  }
+
+  .container {
+    display:list-item;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 35%;
+    width: 500px;
+    height: 670px;
+    border-radius: 50px;
+    background: #fff;
+    box-shadow: 24px 24px 48px rgba(174, 210, 236, 0.4), 
+                inset 12px 12x 24px #e7f2f9, 
+                inset -24px -24px 48px #b8d8ee;
+    
+  }
+
+  .container h1{
+    font-size: 36px;
+    text-align: center;
+    font-weight: 700;
+    color: #3e90d0;
+    padding-top: 50px;
+  }
+
+  
+
+  .container input{
+    font-family: Cairo Play;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    background-color: #6facdc;
+    color: rgb(101, 101, 101);
+    border-radius: 40px;
+    line-height: 20px;
+    margin-bottom: 40px;
+  }
+
+  .container select{
+    font-family: Cairo Play;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    background-color: #6facdc;
+    color: rgb(101, 101, 101);
+    border-radius: 40px;
+    line-height: 20px;
+    margin-bottom: 40px;
+  }
+
+  .btn{
+    position:static;
+    font-family: Cairo Play;
+    margin-left: 37%;
+    text-transform: uppercase;
+    padding: 10px;
+    background-color: #3e90d0;
+    border-radius: 40px;
+    text-align:center;
+    width: 100px;
+    color: #fff;
+    border-color: #3e90d0;
+    transition: 0.2s ease-out;
+    margin-top: 110px;
+  }
+
+  .btn:hover {
+    
+    cursor: pointer;
+    
+  }
+  .btn1{
+    font-family: Cairo Play;
+    margin-top: 10px;
+    margin-left: 30%;
+    text-transform: uppercase;
+    padding: 10px;
+    background-color: #3e90d0;
+    border-radius: 40px;
+    text-align:center;
+    width: 100px;
+    color: #fff;
+    border-color: #3e90d0;
+    transition: 0.2s ease-out;
+  }
+
+  .btn1:hover {
+    
+    cursor: pointer;
+   
+  }
+  .container label{
+    font-size: 20px;
+    font-family: Cairo Play;
+    padding: 50px;
+    margin-left: 40px;
+  }
+
+  .countries  {
+    margin-top: 20px;
+    margin-left: 80px;
+  }
+
+  .country{
+  font-family: Cairo Play;
+  margin: 0px;
+  background-color: #5b9dcf;
+  gap: 5px;
+  color: rgb(255, 255, 255);
+  border-radius: 40px;
+  padding: 5px;
+  padding-left: 12px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  font-size: 13px;
+  }
+
+.countryC {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    gap: 30px;
+    margin-left: 60px;
+    
+}
+
+
+
+.delete{
+ 
+  position: inline;                      
+  background-color: #4082b4;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  border-radius: 40px;
+  border-color: #245d88;
+  height: 22px;
+  width: 22px;
+}
+
+.delete:hover{
+  
+  background-color: #3e90d0;
+  color: rgb(239, 239, 239);
+}
+
+.error{
+  
+  position: absolute;
+  font-size: 10px;
+  margin-left: 180px;
+  color: rgb(197, 5, 5);
+  text-transform: uppercase;
+  margin-top: 55px;
+}

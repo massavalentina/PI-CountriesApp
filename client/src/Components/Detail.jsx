@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getDetail } from '../Redux/actions';
-
+import s from './Detail.module.css'
 
 const Detail = (props) => {
 	const [loading, setLoading] = useState(false);
@@ -20,38 +20,61 @@ const Detail = (props) => {
 	}, [dispatch, id]);
 
 	return (
+
+		<div className={s.background}>
+			<link rel="preconnect" href="https://fonts.googleapis.com"/>
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+			<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
 		<div>
 			{/* <img src={Img} /> */}
-			<button onClick={goBack} className='goBack'>
-				<i class='fas fa-backward'></i> Go Back
+			<button className={s.button} onClick={goBack} >
+				You can visit every country as you wan, 
+				let check it out some others!
 			</button>
-			<div className='contenedor'>
+
+
+			<div className={s.contDetail}>
 				{loading ? (
 					detail.map((i) => (
-						<div>
-							<h1>{i.name}</h1>
-							<div>
-								<img className='imgDetails' src={i.flag} alt='Not found'></img>
+						<div className={s.container}>
+								
 
-								<h3>Continent: {i.continents}</h3>
-								<h3>Capital: {i.capital}</h3>
-								<h3>id: {i.id}</h3>
-								<h3>Sub Region: {i.subregion}</h3>
-								<h3>Area: {i.area}</h3>
-								<h3>Population: {i.population}</h3>
-								<h1>Activities</h1>
+							<div class={s.productdetails}>
+		
+								<h1>{i.name}</h1>
+								
+									
+										<p class={s.information}>
+															<h3>Continent: {i.continent}</h3>
+															<h3>Capital: {i.capital}</h3>
+															<h3>id: {i.id}</h3>
+															<h3>Sub Region: {i.subregion}</h3>
+															<h3>Area: {i.area} km</h3>
+															<h3>Population: {i.population}</h3></p>
+							</div>
+							
+							<div className={s.productimage}>
+								<img src={i.flag} alt="" />
+							</div>
+							<div className={s.cAct}>
+							
+								
+							
 								{i.activities.length > 0 ? (
-									i.activities.map((i) => (
-										<div className='activity'>
-											<h3>name: {i.name}</h3>
-											<h3>difficulty(1-5): {i.difficulty}</h3>
-											<h3>duration: {i.duration} hours</h3>
-											<h3>season: {i.season}</h3>
-										</div>
+									i.activities?.map((i) => (
+									<div className={s.info}>
+									<div>
+									<p>name : {i.name} </p>
+									<p>difficulty(1-5): {i.difficulty} </p>
+									<p>duration : {i.duration} hours </p>
+									<p>season : {i.season}</p>
+									</div>
+									</div>
 									))
 								) : (
-									<h1>No hay actividades relacionadas</h1>
+									<h2 className={s.noAct}>no activities available</h2>
 								)}
+								
 							</div>
 						</div>
 					))
@@ -59,6 +82,7 @@ const Detail = (props) => {
 					<div>loading</div>
 				)}
 			</div>
+		</div>
 		</div>
 	);
 };

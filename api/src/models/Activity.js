@@ -22,10 +22,10 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         season: {
-            type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
-            allowNull: false,
-            // type: DataTypes.STRING,
+            // type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
             // allowNull: false,
+            type: DataTypes.STRING,
+            allowNull: false,
             // validate: {
             //     isIn: [['Verano', 'Otoño', 'Invierno', 'Primavera']]
             // }
