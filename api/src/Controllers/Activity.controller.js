@@ -1,4 +1,4 @@
-const { Activity, Country } = require('../db.js');
+const { Activity} = require('../db.js');
 
 
 
@@ -48,18 +48,18 @@ const deleteActivity = async (req, res) => {
 
 const updateActivity = async (req, res) => {
 	const { id } = req.params;
-	const {name,difficulty,duration,season,countries} = req.body;
+	const { name, difficulty, duration, season } = req.body;
 	
 	try {
 	  await Activity.update(
 		{
 		name,
-	difficulty,
-	duration,
-	season
+		difficulty,
+		duration,
+		season
 		},
 		{ where: 
-			{id: id } }
+			{ id: id } }
 	  );
 	  res.status(201).json({ msg: 'Updated information' });
 	} catch (error) {

@@ -30,12 +30,6 @@ const rootReducer = (state = initialState, action) => {
 			};
 			
 
-		case EDIT_ACTIVITY:
-			return{
-				...state,
-				 activities: state.activities.filter(activity=>activity.name !== action.payload) 
-				}
-
 		case GET_DETAIL:
 			return {
 				...state,
@@ -151,11 +145,17 @@ const rootReducer = (state = initialState, action) => {
 							}
 							return 0;
 					  });
+					  
 			return {
 				...state,
 				countries: orderByName,
 			};
 
+			// case EDIT_ACTIVITY:
+			// 	return{
+			// 		...state,
+			// 		 activities: state.activities.filter(activity=>activity.name !== action.payload) 
+			// 		}
 			
 		default:
 			return state;

@@ -84,11 +84,7 @@ export default function HomeClimate(props) {
           <div className={s.text}>Here we leave a map at your disposal so you can search for any location in the world</div>
         </div>
 
-      
-      {/* <img className={s.ciudadImg} src={ciudad} alt="" />
-      <img className={s.addImg} src={add} alt="" />
-      <img className={s.paisImg} src={pais} alt="" />
-       */}
+  
 
        <iframe
         className={s.iframe} title="map" src={`https://maps.google.com/?ll=${props.lat},${props.lon}&z=5&t=k&output=embed`}></iframe>

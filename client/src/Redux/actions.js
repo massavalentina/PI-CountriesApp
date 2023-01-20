@@ -13,20 +13,7 @@ export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 export const EDIT_ACTIVITY = 'EDIT_ACTIVITY';
 
 
-export const editActivity = (name) => {
-    return async function(dispatch){
-        await axios.put(`/activities/${name}`); 
-        return dispatch( {type: EDIT_ACTIVITY, payload: name})
-    }
-};
 
-
-export const deleteActivity = (name) => {
-    return async function(dispatch){
-        await axios.delete(`/activities/${name}`); 
-        return dispatch( {type: DELETE_ACTIVITY, payload: name})
-    }
-};
 export const getAllActivities = () => {
 	return async (dispatch) => {
 		const { data } = await axios('/activities');
@@ -97,12 +84,16 @@ export const byContinents = (payload) => {
 	};
 };
 
+
+
 export const byActivity = (payload) => {
 	return {
 		type: BY_ACTIVITY,
 		payload,
 	};
 };
+
+
 
 export const alphabeticalOrder = (payload) => {
 	return {
@@ -111,6 +102,8 @@ export const alphabeticalOrder = (payload) => {
 	};
 };
 
+
+
 export const populationOrder = (payload) => {
 	return {
 		type: POPULATION_ORDER,
@@ -118,6 +111,25 @@ export const populationOrder = (payload) => {
 	};
 };
 
+
+
 export function setLoading(payload) {
 	return { type: SET_LOADING, payload };
-}
+};
+
+
+export const deleteActivity = (name) => {
+    return async function(dispatch){
+        await axios.delete(`/activities/${name}`); 
+        return dispatch( {type: DELETE_ACTIVITY, payload: name})
+    }
+};
+
+
+
+// export const editActivity = (id) => {
+//     return async function(dispatch){
+//         await axios.put(`/activities/${id}`); 
+//         return dispatch( {type: EDIT_ACTIVITY, payload: id})
+//     }
+// };

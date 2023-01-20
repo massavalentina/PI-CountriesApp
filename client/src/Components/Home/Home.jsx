@@ -21,32 +21,33 @@ import s from './Home.module.css'
 function Home ()  {
 	
 	const dispatch = useDispatch();
-	const countries = useSelector((e) => e.countries); //estados "globales"
-	const activities = useSelector((e) => e.activities); //estados "globales"
-	const loading = useSelector((e) => e.loading); //estados "globales"
+	const countries = useSelector((e) => e.countries); 
+	const activities = useSelector((e) => e.activities); 
+	const loading = useSelector((e) => e.loading); 
 
 	
 ///////////////paginated
-	const [currentPage, setCurrentPage] = useState(1); // estado local pag actual
-	const [couPerPage, setCouPerPage] = useState(9);   // estado local countries por pagina
+	const [currentPage, setCurrentPage] = useState(1); 
+	const [couPerPage, setCouPerPage] = useState(10);   
 
-	const coulast = currentPage * couPerPage;  // 6 , 
-	const couFirst = coulast - couPerPage;   // 0 , 
+	const coulast = currentPage * couPerPage;  
+	const couFirst = coulast - couPerPage;   
 
-	const allpages = countries.slice(couFirst, coulast);  // constante anterior con el state
-                                                              // slice = parte el array entre el indFirst y el indLast
+	const allpages = countries.slice(couFirst, coulast); 
+                                                             
 
 	
- const paginated = (pageNumber) => {      /// seteado de la pagina en el numero de la pagina
+ const paginated = (pageNumber) => {      
 	setCurrentPage(pageNumber)
+	setCouPerPage(9)
 	 }
 														  
 
 
-////////////////filtros
+////////////////filters
 	const [/*orderName*/, setOrderName] = useState('');
 	const [/*orderPopulation*/, setOrderPopulation] = useState('');
-	const [/*orderContinent*/, setOrderContinent] = useState('');
+	const [/*orderContinent*/, setOrderContinent] = useState('');                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 	const [/*orderActivity*/, setOrderActivity] = useState('');
 
 
@@ -123,6 +124,14 @@ function Home ()  {
 				</select>
 
 
+				<select className={s.itemHome} onChange={(e) => handleByActivity(e)}>
+					<option value='Nothing'>Select activities</option>
+					<option value='All'>All</option>
+					{activities.map((i) => (
+						<option value={i.name}>{i.name}</option>
+					))}
+				</select>
+
 
 				<select className={s.itemHome} onChange={(e) => handleOrderP(e)}>
 					<option value=''>Population</option>
@@ -140,13 +149,7 @@ function Home ()  {
 
 
 
-				<select className={s.itemHome} onChange={(e) => handleByActivity(e)}>
-					<option value='Nothing'>Select activities</option>
-					<option value='All'>All</option>
-					{activities.map((i) => (
-						<option value={i.name}>{i.name}</option>
-					))}
-				</select>
+				
 
 				
 

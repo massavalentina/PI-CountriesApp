@@ -13,7 +13,7 @@ const Search = () => {
 	const dispatch = useDispatch();
 	
 	useEffect(() => {  
-			                                 ///para que vaya trayendo los paises que matcheen
+			                                
 			dispatch(getAllCountries());
 		}, [dispatch]);
 

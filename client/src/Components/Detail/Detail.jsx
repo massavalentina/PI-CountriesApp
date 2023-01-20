@@ -49,7 +49,7 @@ const Detail = (props) => {
 															<h3>Capital: {i.capital}</h3>
 															<h3>id: {i.id}</h3>
 															<h3>Sub Region: {i.subregion}</h3>
-															<h3>Area: {i.area} km</h3>
+															<h3>Area: {i.area} km²</h3>
 															<h3>Population: {i.population}</h3>
 															<h3>Activities:</h3></p>
 							</div>
