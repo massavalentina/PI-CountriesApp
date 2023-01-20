@@ -1,5 +1,6 @@
-const { Country, Activity } = require('../db.js');
-const { Op } = require('sequelize');
+const { Activity, Country } = require('../db.js');
+
+
 
 const postActivity = async (req, res) => {
 	try{
@@ -9,67 +10,65 @@ const postActivity = async (req, res) => {
 			difficulty,
 			duration,
 			season,
+			countries,
 		});
 		await newActivity.addCountry(countries);
-		res.status(200).send(newActivity);
+		
+		res.status(200).send(newActivity, "The activity was succesfully created");
 	} catch (error){
-		res.status(400).send( {msg: error.message});
+		res.status(404).send( {msg: error.message});
 	}
 }
 
-// const postActivity = async (req, res) => {
-// 	const { name, difficulty, duration, season, countries } = req.body;
-// 	try {
-// 		if (name && difficulty && duration && season && countries) {
-// 			const activity = {
-// 				name,
-// 				difficulty,
-// 				season,
-// 				duration,
-// 			};
-// 			const createdActivity = await Activity.create(activity);
-// 			const infoCountriesName = await Country.findAll({
-// 				where: {
-// 					name: countries,
-// 				},
-// 				include: Activity
-// 			})
-// 			infoCountriesName?.map(a => a.addActivity(createdActivity));
-// 			res.status(200).send("Se creo correctamente la Actividad");
-// 		} else {
-// 			res.status(404).send("Missing parameters");
-// 		};
-// 	} catch (error) {
-// 		console.log(error);
-// 		res.status(500).json({ message: error });
-// 	};
-// }
+
 
 const getActivities = async (req, res) => {
 	try {
 		const activities = await Activity.findAll();
 		res.status(200).json(activities);
 	} catch (error) {
-		res.status(500).json({ msg: error.message });
+		res.status(404).json({ msg: error.message });
 	}
 };
 
 const deleteActivity = async (req, res) => {
-	const { id } = req.params;
+	const { name } = req.params;
 	try {
 		await Activity.destroy({
 			where: {
-				id: id,
+				name: name,
 			},
 		});
 		res.status(200).send("The activity was successfully deleted");
 	} catch (error) {
-		res.status(500).json({ msg: error.message });
+		res.status(404).json({ msg: error.message });
 	};
 };
+
+const editActivity = async (req, res) => {
+	try{
+        const {id} = req.params;
+        const {name,difficulty,duration,season,countries} = req.body;
+        const editedAct = await Tours.findOne({ where:{id}});
+		editedAct.set({
+            name,difficulty,duration,season
+        });
+        await  editedAct.save();
+        const countriesAct = await Country.findAll({
+            where: {
+                    name: countries,
+              },
+        });
+		editedAct.addCountry(countriesAct);
+        res.status(201).send("La actividad fue actualizada correctamente");
+    }catch(error){
+        res.status(404).send("La actividad no pudo ser actualizada");
+    }
+}
 
 module.exports = {
 	postActivity,
 	getActivities,
-	deleteActivity
+	deleteActivity,
+	editActivity
 }

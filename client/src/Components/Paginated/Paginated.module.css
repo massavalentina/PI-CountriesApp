@@ -16,12 +16,12 @@
     list-style: none;
     position: relative;
     margin: 5px;
-    padding: 10px 15px;
+    padding: 5px 10px;
     border-radius: 7px;
     border: 2px solid #67a2e9cb;
-    font-size: 14px;
+    font-size: 18px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 2px;
     background-color: #5390D9;
     overflow: hidden;

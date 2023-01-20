@@ -6,64 +6,39 @@ import {
 	byContinents,
 	getAllActivities,
 	getAllCountries,
+	getCountryName,
 	populationOrder,
 	setLoading,
-} from '../Redux/actions';
-import Card from './Card';
-import Paginated from './Paginated';
+} from '../../Redux/actions';
+import Card from '../Card/Card';
+import Paginated from '../Paginated/Paginated';
 import { Link } from 'react-router-dom';
 import s from './Home.module.css'
 
-const Home = () => {
+
+
+
+function Home ()  {
+	
 	const dispatch = useDispatch();
 	const countries = useSelector((e) => e.countries); //estados "globales"
-	const loading = useSelector((e) => e.loading); //estados "globales"
 	const activities = useSelector((e) => e.activities); //estados "globales"
+	const loading = useSelector((e) => e.loading); //estados "globales"
+
+	
+///////////////paginated
 	const [currentPage, setCurrentPage] = useState(1);
 	const [couPerPage, setCouPerPage] = useState(9);
+
 	const indexlast = currentPage * couPerPage;
 	const indexFirst = indexlast - couPerPage;
 	const allpages = countries.slice(indexFirst, indexlast);
-	const [orderName, setOrderName] = useState('');
-	const [orderPopulation, setOrderPopulation] = useState('');
+	console.log(allpages)
 
-	const handleOrderN = (e) => {
-		e.preventDefault();
-		dispatch(alphabeticalOrder(e.target.value));
-		setCurrentPage(1);
-		setOrderName(`Ordenado ${e.target.value}`);
-	};
+////////////////filtros
+	const [/*orderName*/, setOrderName] = useState('');
+	const [/*orderPopulation*/, setOrderPopulation] = useState('');
 
-	const handleOrderP = (e) => {
-		e.preventDefault();
-		dispatch(populationOrder(e.target.value));
-		setCurrentPage(1);
-		setOrderPopulation(`Ordenado ${e.target.value}`);
-	};
-
-	const paginated = (pageNumber) => 	{
-        if (pageNumber === 1) {
-            setCouPerPage(9);
-            setCurrentPage(pageNumber)
-        } else if (pageNumber > 25) {
-            setCouPerPage(10);
-            setCurrentPage(25)
-        } else {
-            setCouPerPage(10);
-            setCurrentPage(pageNumber)
-        }
-    }
-
-
-
-	const handleContinents = (e) => {
-		dispatch(byContinents(e.target.value));
-		setCurrentPage(1)
-	};
-
-	const handleByActivity = (e) => {
-		dispatch(byActivity(e.target.value));
-	};
 
 	useEffect(() => {
 		dispatch(getAllCountries());
@@ -71,13 +46,44 @@ const Home = () => {
 		dispatch(setLoading(true));
 	}, [dispatch]);
 
-	// useEffect(() => {
-    //     setCharge(true);
-    //     setTimeout(() => {
-    //         setCharge(false);
-    //     }, 5000);
-    //     dispatch(getAllCountries());
-    // }, []);
+
+/////////// f alpha
+	const handleOrderN = (e) => {
+		e.preventDefault();
+		dispatch(alphabeticalOrder(e.target.value));
+		setCurrentPage(1);
+		setOrderName(`${e.target.value}`);
+	};
+
+/////////// f popu
+	const handleOrderP = (e) => {
+		e.preventDefault();
+		dispatch(populationOrder(e.target.value));
+		setCurrentPage(1);
+		setOrderPopulation(`${e.target.value}`);
+	};
+
+////////// f cont
+	const handleContinents = (e) => {
+		e.preventDefault();
+		dispatch(byContinents(e.target.value));
+		setCurrentPage(1)
+	};
+
+////////// f activ
+	const handleByActivity = (e) => {
+		e.preventDefault();
+		dispatch(byActivity(e.target.value));
+		setCurrentPage(1)
+	};
+
+
+////////// paginated
+	const paginated = (pageNumber) => {
+		setCurrentPage(pageNumber)
+	  }
+	  console.log(countries)
+
 
     function handleClick (e) {
         window.location.reload(false);
@@ -101,11 +107,14 @@ const Home = () => {
 				</select>
 				
 
+
 				<select className={s.itemHome} onChange={(e) => handleOrderN(e)}>
 					<option value=''>Alphabetical</option>
 					<option value='Asc'>A-Z</option>
 					<option value='Des'>Z-A</option>
 				</select>
+
+
 
 				<select className={s.itemHome} onChange={(e) => handleByActivity(e)}>
 					<option value='Nothing'>Select activities</option>
@@ -114,6 +123,8 @@ const Home = () => {
 						<option value={i.name}>{i.name}</option>
 					))}
 				</select>
+
+
 
 				<select className={s.itemHome} onChange={(e) => handleContinents(e)}>
 					<option value=''>Select continents</option>
@@ -136,10 +147,12 @@ const Home = () => {
 								couPerPage={couPerPage}
 								paginated={paginated}
 							/>
+							
 			<div className={s.containerCards}>
 
 				{!loading ? 
 				( allpages.map((i) => 
+				
 					(
 					<div className={s.container}>
 						<div className={s.cards}>
@@ -151,16 +164,16 @@ const Home = () => {
 									continent={i.continent}
 								/>
 							<div>
-								<Link className={s.button} to={'/detail/' + i.id}>MORE INFO</Link>
+								<Link className={s.button} to={'/detail/' + i.id}>FIND INFO</Link>
 							</div>
 						</div>
 					</div>
 					))
-				) : (
+				) :  (
 					<div className={s.containerL}>
 						<div className={s.loading}>Loading...</div>
 					</div>
-					)
+					) 
 				};
 
 			</div>

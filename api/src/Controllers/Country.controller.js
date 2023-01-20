@@ -1,6 +1,7 @@
 const { Country, Activity } = require('../db.js')
 const axios = require('axios');
 
+
 const getCountries = async (req, res) => {
 	const { name } = req.query;
 	try {
@@ -49,11 +50,12 @@ const getCountries = async (req, res) => {
 		let countriesName = allCountries.filter(el => el.name.toLowerCase().includes(name.toLowerCase()))
 		return countriesName.length ?
 			res.status(200).send(countriesName) :
-			res.status(404).send('No existe ese Pais');
+			res.status(404).send('Country invalid');
 	} catch (error) {
 		res.status(500).json({ msg: error.message });
 	};
 };
+
 
 const getCountryById = async (req, res) => {
 	const { id } = req.params;
@@ -70,11 +72,12 @@ const getCountryById = async (req, res) => {
 		let countriesId = allCountries.filter(el => el.id.toLowerCase().includes(id.toLowerCase()))
 		return countriesId.length ?
 		res.status(200).send(countriesId) :
-		res.status(404).send('No se recibio un id correcto');
+		res.status(404).send('Id invalid');
 	} catch (error) {
 		res.status(500).json({ msg: error.message });
 	};
 };
+
 
 module.exports={
 	getCountries,

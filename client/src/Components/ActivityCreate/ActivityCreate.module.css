@@ -13,10 +13,10 @@
   .container {
     display:list-item;
     position: relative;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 35%;
     width: 500px;
-    height: 670px;
+    height: 690px;
     border-radius: 50px;
     background: #fff;
     box-shadow: 24px 24px 48px rgba(174, 210, 236, 0.4), 
@@ -31,40 +31,48 @@
     font-weight: 700;
     color: #3e90d0;
     padding-top: 50px;
+    text-transform: none;
+    text-decoration: none;
   }
 
   
 
   .container input{
     font-family: Cairo Play;
-    padding: 12px 20px;
-    border: none;
+      color: rgb(0, 0, 0);
+      padding: 15px 20px;
     outline: none;
-    background-color: #6facdc;
-    color: rgb(101, 101, 101);
+    background-color: #ffffff;
     border-radius: 40px;
     line-height: 20px;
     margin-bottom: 40px;
+   border-color: #3e90d0;
+   border-width: 2px;
+   font-size: 16px;
+    font-weight: 400px;
   }
 
   .container select{
     font-family: Cairo Play;
     padding: 12px 20px;
-    border: none;
     outline: none;
-    background-color: #6facdc;
-    color: rgb(101, 101, 101);
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
     border-radius: 40px;
     line-height: 20px;
     margin-bottom: 40px;
+    border-color: #3e90d0;
+    border-width: 2px;
+    font-size: 16px;
+    font-weight: 400px;
   }
 
   .btn{
+    
     position:static;
     font-family: Cairo Play;
-    margin-left: 37%;
+    margin-left: 10%;
     text-transform: uppercase;
-    padding: 10px;
     background-color: #3e90d0;
     border-radius: 40px;
     text-align:center;
@@ -72,7 +80,13 @@
     color: #fff;
     border-color: #3e90d0;
     transition: 0.2s ease-out;
-    margin-top: 110px;
+    margin-top: 80px;
+    font-size: 20px;
+    width: auto;
+    line-height: 40px;
+    padding: 10px 30px;
+    
+    
   }
 
   .btn:hover {
@@ -93,6 +107,7 @@
     color: #fff;
     border-color: #3e90d0;
     transition: 0.2s ease-out;
+    
   }
 
   .btn1:hover {
@@ -119,22 +134,24 @@
   gap: 5px;
   color: rgb(255, 255, 255);
   border-radius: 40px;
-  padding: 5px;
+  padding: 10px;
   padding-left: 12px;
   padding-right: 10px;
   display: flex;
   flex-direction: row;
-  font-size: 13px;
+  font-size: 15px;
+  
   }
 
 .countryC {
+ 
     position: absolute;
     display: flex;
     flex-wrap: wrap;
     margin-top: 0px;
     gap: 30px;
     margin-left: 60px;
-    
+   
 }
 
 
@@ -157,11 +174,84 @@
 }
 
 .error{
-  
+  font-family: Cairo Play;
   position: absolute;
-  font-size: 10px;
-  margin-left: 180px;
+  font-size: 12px;
+  margin-left: 240px;
   color: rgb(197, 5, 5);
   text-transform: uppercase;
-  margin-top: 55px;
+  font-weight:650;
+  margin-top: 65px;
+  line-height: 12px;
+  padding-right: 50px;
 }
+
+
+
+
+.containerA{  
+  line-height: 15px;
+  text-align: center;
+  height: 160px;
+  width: 190px;
+  padding: 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  margin-left: 600px;
+  background-color: #3e90d0;
+  flex-direction:row;  
+   position: absolute;
+   color: aliceblue;
+   font-family: Cairo Play;
+   border-color: #fff;
+   border: solid 3px;
+   font-size: 20px;
+   
+   
+}
+
+.containerA p{
+  width: 170px;
+  height: 20px;
+  text-align: center;
+  line-height: 10px;
+  font-family: Cairo Play;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+
+.containerAA{
+    position: absolute;
+    display:grid;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    gap: 250px;
+    margin-left: 630px;
+  
+
+}
+
+
+.buttonA{
+  font-family: Cairo Play;
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+  border-radius: 40px;
+  border: 3px solid #ffffff;
+  color: rgb(234, 242, 248);
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #3684be;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 0;
+
+  
+}
+
+
+
+

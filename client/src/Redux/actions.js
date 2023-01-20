@@ -9,7 +9,24 @@ export const CREATE_ACTIVITY = 'CREATE_ACTIVITY';
 export const GET_DETAIL = 'GET_DETAIL';
 export const SET_LOADING = 'SET_LOADING';
 export const GET_ACTIVITIES = 'GET_ACTIVITIES';
+export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
+export const EDIT_ACTIVITY = 'EDIT_ACTIVITY';
 
+
+export const editActivity = (name) => {
+    return async function(dispatch){
+        await axios.put(`/activities/${name}`); 
+        return dispatch( {type: EDIT_ACTIVITY, payload: name})
+    }
+};
+
+
+export const deleteActivity = (name) => {
+    return async function(dispatch){
+        await axios.delete(`/activities/${name}`); 
+        return dispatch( {type: DELETE_ACTIVITY, payload: name})
+    }
+};
 export const getAllActivities = () => {
 	return async (dispatch) => {
 		const { data } = await axios('/activities');
@@ -51,13 +68,13 @@ export const getDetail = (id) => {
 export function getCountryName(name) {
     return async function (dispatch) {
         try{
-            const {data} = await axios(`/countries?name=${name}`)
+            const nameCountry = await axios(`/countries?name=${name}`)
             return dispatch({
                 type: SEARCH,
-                payload: data,
+                payload: nameCountry.data,
             })
         } catch(error){
-            console.log(error)
+			
         }
     }
 };
@@ -74,6 +91,9 @@ export const createActivity = (payload) => {
 		});
 	};
 };
+
+
+
 
 export const byContinents = (payload) => {
 	return {

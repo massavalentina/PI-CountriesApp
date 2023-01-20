@@ -9,6 +9,8 @@ import {
 	GET_DETAIL,
 	SET_LOADING,
 	GET_ACTIVITIES,
+	DELETE_ACTIVITY,
+	EDIT_ACTIVITY
 } from './actions';
 
 const initialState = {
@@ -24,12 +26,23 @@ const rootReducer = (state = initialState, action) => {
 		case CREATE_ACTIVITY:
 			return {
 				...state,
+				
 			};
+			
+
+		case EDIT_ACTIVITY:
+			return{
+				...state,
+				 activities: state.activities.filter(activity=>activity.name !== action.payload) 
+				}
+
 		case GET_DETAIL:
 			return {
 				...state,
 				detail: action.payload,
 			};
+
+
 		case COUNTRIES:
 			return {
 				...state,
@@ -38,16 +51,21 @@ const rootReducer = (state = initialState, action) => {
 				loading: false,
 			};
 		
+
 		case SEARCH:
 			return {
 				...state,
 				countries: action.payload,
 			};
+
+
 		case SET_LOADING:
 			return {
 				...state,
 				loading: action.payload,
 			};
+
+
 		case BY_CONTINENTS:
 			const allCountries = state.copiaCountries;
 			const continentsFlitred =
@@ -59,6 +77,12 @@ const rootReducer = (state = initialState, action) => {
 			};
 
 
+		case DELETE_ACTIVITY:
+            return{
+                ...state,
+               activities: state.activities.filter(activity=>activity.name !== action.payload) 
+            }
+	
 
 		case GET_ACTIVITIES:
 				return {
@@ -77,10 +101,6 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 countries: activitiesFilter
             }     
-
-			
-
-
 
 
 		case POPULATION_ORDER:
@@ -108,6 +128,8 @@ const rootReducer = (state = initialState, action) => {
 				...state,
 				countries: orderByPopulation,
 			};
+
+			
 		case ALPHABETICAL_ORDER:
 			const orderByName =
 				action.payload === 'Asc'
@@ -133,6 +155,8 @@ const rootReducer = (state = initialState, action) => {
 				...state,
 				countries: orderByName,
 			};
+
+			
 		default:
 			return state;
 	}

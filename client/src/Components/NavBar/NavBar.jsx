@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NavLink } from 'react-router-dom';
 // import Img from './images/lupa.png';
-import Search from './Search';
+import Search from '../Search/Search';
 import s from './Navbar.module.css'
 
 function Navbar() {
@@ -20,27 +20,43 @@ function Navbar() {
 				</div>
 				
 				<div>
-					<NavLink exact to='/home'>
-						<div className={s.buttonsH}>
-							Home
-						</div>	
+					<NavLink exact to='/'>
+						<button className={s.buttonsH}>
+							Landing 
+						</button>	
 					</NavLink>
-				</div>        
+				</div>   
+
+				<div>
+					<NavLink exact to='/home'>
+						<button className={s.buttons}>
+							HOME 
+						</button>	
+					</NavLink>
+				</div>   
+
+				<div>
+					<NavLink exact to='/activities'>
+						<button className={s.buttons}>
+							ACTIVITIES 
+						</button>	
+					</NavLink>
+				</div>      
 
 							
 				<div>
 					<NavLink exact to='/create/activities'>
-						<div className={s.buttons}>
+						<button className={s.buttons}>
 							Create Activity 
-						</div>
+						</button>
 					</NavLink>
 				</div>	
 
 				<div>
-					<NavLink exact to='/about'>
-						<div className={s.buttons}>
-							About
-						</div>
+					<NavLink exact to='/climateapp'>
+						<button className={s.buttons}>
+							Weather App
+						</button>
 					</NavLink>
 				</div>
 
@@ -55,3 +71,4 @@ function Navbar() {
 }
 
 export default Navbar;
+

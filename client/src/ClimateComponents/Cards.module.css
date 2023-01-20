@@ -1,0 +1,40 @@
+
+.card-title {
+    margin-bottom: 15px;
+  }
+  
+  #closeIcon {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2px;
+    margin-top: 2px;
+  }
+  
+  .card-body {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+  }
+  
+  .containerCard  {
+
+      background: #7dd2fa83;
+      overflow: hidden;
+     
+  
+      border-radius: 20px;
+      font-size: 17px;
+      padding: 7px;
+      text-transform: uppercase;
+    }
+    
+    .btnDanger{
+      color: rgb(66, 152, 160);
+      background-color: #7dd2fa83;
+      width: 35px;
+      border-radius: 10px; 
+      border-color: rgba(107, 211, 224, 0.411);
+      font-size: 15px;
+      padding: 3px;
+      text-transform: uppercase;
+    }
+    

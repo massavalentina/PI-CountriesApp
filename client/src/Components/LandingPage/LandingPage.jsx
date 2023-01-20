@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import s from './Landing.module.css'
+import s from './LandingPage.module.css'
 import logo from './landingimg.png'
 
 export default function LandingPage () {
@@ -24,9 +24,8 @@ export default function LandingPage () {
         <div className={s.containerInfo}>
             <p className={s.subTitle}>Welcome to</p>
             <h1 className={s.title}>Countries App</h1>
-            <p className={s.text}>  Find the best locations so you can plan and build your roadmap. Making the most of the incredible experiences that each site can give you</p>
-            
-           
+            <p className={s.text}>  Find the best locations so you can plan and build your roadmap. </p>
+            <p className={s.text}> Making the most of the incredible experiences that each site can give you</p>
 
             <Link to='/home'>
                 <button className={s.buttonLink}>Get started now </button>

@@ -3,7 +3,6 @@
     display: flex;
     height: 50px;
     align-items: center;
-    
 }
 
 .title{
@@ -33,7 +32,7 @@
 .buttonsH{
     font-family: Cairo Play;
     text-decoration: none;
-    margin: 10px ;
+    margin: 10PX;
     font-size: 14px;
     position: relative;
     padding: 5px 15px;
@@ -43,7 +42,7 @@
     text-transform: uppercase;
     font-weight: 500;
     background-color: #3e7ac3;
-    margin-left: 300px;
+    margin-left: 200px;
 }
 
 

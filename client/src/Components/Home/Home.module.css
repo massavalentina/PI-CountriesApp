@@ -68,7 +68,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, 300px);
-    flex-direction: row;
+   
     flex-wrap: wrap;
     justify-content: center;
     width: 90%;  
@@ -120,7 +120,6 @@
         padding: .50rem 0.5rem;
         text-align: center;
         text-decoration: none #D1D5DB solid;
-        text-decoration-thickness: auto;
         box-shadow: 0 1px 3px 0 rgba(31, 48, 73, 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
         cursor: pointer;
         user-select: none;

@@ -1,9 +1,8 @@
 import React from "react";
 import s from './Card.module.css'
-import { Link } from 'react-router-dom'
 
 
-export default function Card({flag, name, continent, id}) {
+export default function Card({flag, name, continent}) {
     return (
         <div className={s.container}>
 
@@ -13,11 +12,6 @@ export default function Card({flag, name, continent, id}) {
 
 
             <div >
-
-
-
-
-                
 
                 <div className={s.imgContainer}>
 
@@ -29,6 +23,7 @@ export default function Card({flag, name, continent, id}) {
                 <div className={s.infoContainer}>
                     
                     <h3>{name}</h3> 
+                    
                     <h4> {continent}</h4>
                     
 

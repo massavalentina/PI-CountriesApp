@@ -5,12 +5,6 @@ module.exports = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
-            // validate: {
-            //     isAName(value) {
-            //         const name = isAlphaNumeric(value)
-            //         if (name[0] === false) { throw new Error(name[1]) }
-            //     }
-            // }
         },
         difficulty: {
             type: DataTypes.INTEGER,
@@ -22,13 +16,8 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         season: {
-            // type: DataTypes.ENUM('Summer', 'Autumn', 'Winter', 'Spring'),
-            // allowNull: false,
             type: DataTypes.STRING,
             allowNull: false,
-            // validate: {
-            //     isIn: [['Verano', 'Otoño', 'Invierno', 'Primavera']]
-            // }
         },
         createdInDb:{
             type: DataTypes.BOOLEAN,
