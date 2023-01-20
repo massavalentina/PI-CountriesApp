@@ -45,30 +45,32 @@ const deleteActivity = async (req, res) => {
 	};
 };
 
-const editActivity = async (req, res) => {
-	try{
-        const {id} = req.params;
-        const {name,difficulty,duration,season,countries} = req.body;
-        const editedAct = await Tours.findOne({ where:{id}});
-		editedAct.set({
-            name,difficulty,duration,season
-        });
-        await  editedAct.save();
-        const countriesAct = await Country.findAll({
-            where: {
-                    name: countries,
-              },
-        });
-		editedAct.addCountry(countriesAct);
-        res.status(201).send("La actividad fue actualizada correctamente");
-    }catch(error){
-        res.status(404).send("La actividad no pudo ser actualizada");
-    }
-}
+
+const updateActivity = async (req, res) => {
+	const { id } = req.params;
+	const {name,difficulty,duration,season,countries} = req.body;
+	
+	try {
+	  await Activity.update(
+		{
+		name,
+	difficulty,
+	duration,
+	season
+		},
+		{ where: 
+			{id: id } }
+	  );
+	  res.status(201).json({ msg: 'Updated information' });
+	} catch (error) {
+	  res.status(500).json({ msg: error.message });
+	}
+  };
+
 
 module.exports = {
 	postActivity,
 	getActivities,
 	deleteActivity,
-	editActivity
+	
 }

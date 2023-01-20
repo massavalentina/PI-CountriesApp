@@ -50,7 +50,8 @@ const Detail = (props) => {
 															<h3>id: {i.id}</h3>
 															<h3>Sub Region: {i.subregion}</h3>
 															<h3>Area: {i.area} km</h3>
-															<h3>Population: {i.population}</h3></p>
+															<h3>Population: {i.population}</h3>
+															<h3>Activities:</h3></p>
 							</div>
 							
 							<div className={s.productimage}>
@@ -63,11 +64,13 @@ const Detail = (props) => {
 								{i.activities.length > 0 ? (
 									i.activities?.map((i) => (
 									<div className={s.info}>
+
 									<div>
 									<p>name : {i.name} </p>
 									<p>difficulty(1-5): {i.difficulty} </p>
 									<p>duration : {i.duration} hours </p>
 									<p>season : {i.season}</p>
+									
 									</div>
 									</div>
 									))

@@ -79,9 +79,9 @@ export default function HomeClimate(props) {
         </div>
 
         <div className={s.textCli}>
-          <div className={s.text}>text text texty text text text texty text text text texty text text </div>
-          <div className={s.text}>text text texty text text text texty text text text texty text text </div>
-          <div className={s.text}>text text texty text text text texty text text text texty text text </div>
+          <div className={s.text}>Don't risk another second! </div>
+          <div className={s.text}>Search for your preferred cities and find out what their climate is to ensure a better experience on your new adventures!</div>
+          <div className={s.text}>Here we leave a map at your disposal so you can search for any location in the world</div>
         </div>
 
       

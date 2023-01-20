@@ -33,15 +33,7 @@ function Navbar() {
 							HOME 
 						</button>	
 					</NavLink>
-				</div>   
-
-				<div>
-					<NavLink exact to='/activities'>
-						<button className={s.buttons}>
-							ACTIVITIES 
-						</button>	
-					</NavLink>
-				</div>      
+				</div>         
 
 							
 				<div>

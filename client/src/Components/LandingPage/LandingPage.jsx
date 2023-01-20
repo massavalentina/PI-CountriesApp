@@ -25,7 +25,7 @@ export default function LandingPage () {
             <p className={s.subTitle}>Welcome to</p>
             <h1 className={s.title}>Countries App</h1>
             <p className={s.text}>  Find the best locations so you can plan and build your roadmap. </p>
-            <p className={s.text}> Making the most of the incredible experiences that each site can give you</p>
+            <p className={s.text}>Enjoy to the maximum the incredible experiences that each part of the world can offer you</p>
 
             <Link to='/home'>
                 <button className={s.buttonLink}>Get started now </button>

@@ -38,7 +38,6 @@ export const getAllActivities = () => {
 };
 
 export const getAllCountries = () => {
-	// try{
 	return async (dispatch) => {
 		const { data } = await axios('/countries');
 		return dispatch({
@@ -46,11 +45,7 @@ export const getAllCountries = () => {
 			payload: data,
 		});
 	};
-// }
-// catch(error){
-// 	alert('Country Not Found');
-// 	console.log(error)
-// }
+
 };
 
 export const getDetail = (id) => {

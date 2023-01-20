@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setLoading, createActivity, getAllCountries, getAllActivities, deleteActivity} from '../../Redux/actions';
-import Activities from '../Activities/Activities';
 import Modal from '../Modal/Modal';
 import s from './ActivityCreate.module.css'
 
@@ -138,7 +137,7 @@ const ActivityCreate = () => {
 				<link href="https://fonts.googleapis.com/css2?family=Cairo+Play&display=swap" rel="stylesheet"/>
 
 				<Link to='/home'>
-					<button className={s.btn1}>Volver</button>
+					<button className={s.btn1}>GO TO HOME</button>
 				</Link>
 
 				
@@ -280,7 +279,7 @@ const ActivityCreate = () => {
 					</button>
 
 					<button className={s.btn} onClick={e =>{handleClick(e)}} type='submit'>
-						Reload activities
+					CREATE A NEW ONE
 					</button>
 
 				</form>

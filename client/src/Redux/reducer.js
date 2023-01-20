@@ -108,12 +108,12 @@ const rootReducer = (state = initialState, action) => {
 				action.payload === 'Asc'
 					? state.countries.sort(function (a, b) {
 							if (a.population > b.population) {
-								return -1;
+								return -1;            // -1 = izquierda en el array
 							}
 							if (b.population > a.population) {
-								return 1;
+								return 1;            // 1 = derecha en el array
 							}
-							return 0;
+							return 0;                 // 0 = iguales
 					  })
 					: state.countries.sort(function (a, b) {
 							if (a.population > b.population) {

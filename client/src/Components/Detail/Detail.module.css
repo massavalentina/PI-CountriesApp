@@ -18,10 +18,11 @@
 	border-radius: 5px;
 	overflow: hidden;
 	margin: 5em auto;
-	height: 450px;
+	height: 460px;
 	width: 850px;
   border-radius: 20px;
   padding: 10px;
+  
 	
 }
 
@@ -42,10 +43,10 @@
   font-family: Cairo Play;
 	margin-left: 50px;
 	
-	color: #344055;;
+	color: #ffffff;;
   text-transform: uppercase;
   border-color: #5390D9;
-  font-weight: 600
+  font-weight: 500
   
 }
 
@@ -77,8 +78,9 @@
   text-align: center;
 	font-size: 30px;
 	
-  line-height: 30px;
+  line-height: 40px;
   margin-left: 70px;
+  margin-bottom: 0;
 }
 
 
@@ -86,9 +88,10 @@
   font-family: Cairo Play;
 	text-align: left;
 	font-size: 19px;
-	color: #344055;
+	color: #3e90d0;
   text-transform: uppercase;
   line-height: 30px;
+  
 	
 }
 
@@ -120,30 +123,35 @@
   gap: 5px;
   
   border-radius: 25px;
-  padding: 10px;
+  padding: 15px;
  
   
   display: flex;
   flex-direction: row;
-  font-size: 13px;
+  font-size: 15px;
 
   font-family: Cairo Play;
 	text-align: center;
-	
-	color: #344055;
+
+	color: #ffffff;
   text-transform: uppercase;
-  line-height: 10px;
-  font-weight: 700;
+  line-height: 15px;
+  font-weight: 500;
+  border: 5px solid #2a66af;
+  border-radius: 31px;
 
 }
 
 .container .cAct {
+  
   position: absolute;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 0;
   gap: 30px;
   margin-left: 60px;
+ 
+  
   
 }
 
