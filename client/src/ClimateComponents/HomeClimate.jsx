@@ -63,7 +63,7 @@ export default function HomeClimate(props) {
         The Weather App
       </div>
 
-      <p className={s.linea}>_____________________</p>
+      
 
       <div className={s.subTitle}>
         from the Countries App creators

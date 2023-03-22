@@ -28,7 +28,7 @@ export default function LandingPage () {
             <p className={s.text}>Enjoy to the maximum the incredible experiences that each part of the world can offer you</p>
 
             <Link to='/home'>
-                <button className={s.buttonLink}>Get started now </button>
+                <button className={s.buttonLink}> Get started </button>
             </Link>
         </div>           
                    

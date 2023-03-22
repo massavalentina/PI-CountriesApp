@@ -63,7 +63,11 @@
   position: absolute;
   display: flex;
   flex-direction: row;
+
 }
+
+
+
 
 
 .addImg{
@@ -91,7 +95,7 @@
 
 .title {
 margin-top: 20px;
-background-color: #f8f8f8;
+background-color: #e4f1ff;
 height: 70px;
 width: 300px;
 position: absolute;
@@ -147,3 +151,10 @@ font-weight: 800px;
   border-radius: 40px;
 }
 
+.cards{
+  column-count: 2;
+  column-gap: 0px;
+}
+.cards div:nth-child(n+4) {
+  break-inside: avoid-column;
+}

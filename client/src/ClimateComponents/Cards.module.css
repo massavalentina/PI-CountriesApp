@@ -19,11 +19,11 @@
 
       background: #7dd2fa83;
       overflow: hidden;
-     
+    
   
       border-radius: 20px;
       font-size: 17px;
-      padding: 7px;
+      
       text-transform: uppercase;
     }
     
@@ -36,5 +36,20 @@
       font-size: 15px;
       padding: 3px;
       text-transform: uppercase;
+    }
+    
+    .cards {
+      display: grid;
+      grid-template-columns: 0.5fr 0.5fr;
+      position: relative;
+      margin-left: 35px;
+    }
+    
+    .cards > :nth-child(-n+1) {
+      grid-column: 1;
+    }
+    
+    .cards > :nth-child(n+6) {
+      grid-column: 2;
     }
     

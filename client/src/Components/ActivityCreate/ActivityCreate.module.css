@@ -190,11 +190,10 @@
 
 
 .containerA{  
-  line-height: 15px;
   text-align: center;
   height: 160px;
   width: 190px;
-  padding: 10px;
+  padding: 5px;
   border-radius: 20px;
   text-transform: uppercase;
   margin-left: 600px;
@@ -214,19 +213,23 @@
   width: 170px;
   height: 20px;
   text-align: center;
-  line-height: 10px;
+  line-height: 20px;
   font-family: Cairo Play;
   font-weight: 600;
   color: #ffffff;
   font-size: 15px;
 }
 
+.containerA h3{
+ line-height: 20px;
+ margin-top: 0;
+}
 
 .containerAA{
     position: absolute;
-    display:grid;
+    display: grid;
     flex-wrap: wrap;
-    margin-top: 60px;
+    margin-top: 30px;
     gap: 250px;
     margin-left: 630px;
   
@@ -255,3 +258,16 @@
 
 
 
+.containerAA {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  
+}
+
+.containerAA > :nth-child(-n+1) {
+  grid-column: 1;
+}
+
+.containerAA > :nth-child(n+6) {
+  grid-column: 2;
+}
