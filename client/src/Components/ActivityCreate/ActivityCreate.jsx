@@ -85,6 +85,7 @@ const ActivityCreate = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		console.log(input)
 		dispatch(createActivity(input));
 		setInput({
 			name: '',
