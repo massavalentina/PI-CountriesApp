@@ -35,6 +35,12 @@ const ActivityCreate = () => {
 
 	const [showModal, setShowModal] = useState(false);
 
+	useEffect(() => {
+		dispatch(getAllCountries());
+		dispatch(setLoading(true))
+	}, [dispatch]);
+	
+	
 	const [input, setInput] = useState({
 		name: '',
 		difficulty: '',
@@ -42,13 +48,6 @@ const ActivityCreate = () => {
 		season: '',
 		countries: [],
 	});
-	
-	
-	useEffect(() => {
-		dispatch(getAllCountries());
-		dispatch(setLoading(true))
-	}, [dispatch]);
-
 
 	const handleChange = (e) => {
 		setInput({
