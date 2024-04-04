@@ -1,63 +1,46 @@
 .container {
-    box-shadow: rgba(36, 36, 36, 0.856);
-    font-family: Cairo Play;
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 250px;
-    text-align: center;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    transition: background-color 0.5s, transform 0.5s;
-    background-color: #67a2e9cb;
-    border: 2px solid #67a2e9cb;
-   
-
+  box-shadow: rgba(36, 36, 36, 0.856);
+  font-family: Cairo Play;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  transition: background-color 0.5s, transform 0.5s;
+  background-color: #67a2e9cb;
+  border: 2px solid #67a2e9cb;
 }
-
-
 
 .infoContainer {
-    padding: 0px;
-    line-height: 70px;
-    
+  padding: 0px;
+  line-height: 70px;
 }
 
-.infoContainer h3{
-    padding: 0px;
-    margin: 0px;
-    text-transform: uppercase;
-    font-size:  20px;
-    text-decoration: none;
-    line-height: 25px;
+.infoContainer h3 {
+  padding: 0px;
+  margin: 0px;
+  text-transform: uppercase;
+  font-size: 20px;
+  text-decoration: none;
+  line-height: 25px;
 }
 
-.infoContainer h4{
-    margin-top: 0px;
-    font-size: 15px;
-    text-decoration: none;
+.infoContainer h4 {
+  margin-top: 0px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
-
-.imgContainer img{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-
+.imgContainer img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
 }
-
-
-
-
-
-
-
-
-
-

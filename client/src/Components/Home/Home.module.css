@@ -1,164 +1,156 @@
-  
-  .mainDiv {
-    background: linear-gradient(to top left, #9bf0fc, #5390D9);
-    margin: 0;
-    padding: 0;
-    height: 140vh;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-  
-  }
+.mainDiv {
+  background: linear-gradient(to top left, #9bf0fc, #5390d9);
+  margin: 0;
+  padding: 0;
+  height: 140vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
 
-  .filters{
-    display: flex;
-    justify-content: center;
-    border: none;
-  }
+.filters {
+  display: flex;
+  justify-content: center;
+  border: none;
+}
 
-  .itemHome {
-    cursor: pointer;
-    font-family: Cairo Play;
-    list-style: none;
-    position: relative;
-    margin: 10px;
-    padding: 3px 10px;
-    border-radius: 40px;
-    border: 2px solid #3d7cca;
-    color: rgb(234, 242, 248);
-    font-size: 15px;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 1px;
-    background-color: #5390D9;
-    overflow: hidden;
-    box-shadow: 0 0 0 0 transparent;
-    -webkit-transition: all 0.2s ease-in;
-    -moz-transition: all 0.2s ease-in;
-    transition: all 0.2s ease-in;
-    margin-top: 15px;
-  }
-      
-  .itemHome:hover::before {
-    -webkit-animation: sh02 0.5s 0s linear;
-    -moz-animation: sh02 0.5s 0s linear;
-    animation: sh02 0.5s 0s linear;
-    content: "";
-    display: block;
-    width: 0px;
-    height: 86%;
-    position: absolute;
-    top: 7%;
-    left: 0%;
+.itemHome {
+  cursor: pointer;
+  font-family: Cairo Play;
+  list-style: none;
+  position: relative;
+  margin: 10px;
+  padding: 3px 10px;
+  border-radius: 40px;
+  border: 2px solid #3d7cca;
+  color: rgb(234, 242, 248);
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+  background-color: #5390d9;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  margin-top: 15px;
+}
+
+.itemHome:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+  content: "";
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+.containerCards {
+  margin: 40px;
+  margin-left: 120px;
+  gap: 100px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 300px);
+
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+}
+
+.container {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+}
+.container:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: #5390d9;
+}
+.cards {
+  text-decoration: none;
+}
+
+@keyframes sh02 {
+  from {
     opacity: 0;
-    background: #fff;
-    box-shadow: 0 0 50px 30px #fff;
-    -webkit-transform: skewX(-20deg);
-    -moz-transform: skewX(-20deg);
-    -ms-transform: skewX(-20deg);
-    -o-transform: skewX(-20deg);
-    transform: skewX(-20deg);
+    left: 0%;
   }
 
-  .containerCards {
-    margin: 40px;
-    margin-left: 120px;
-    gap: 100px;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 300px);
-   
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 90%;  
+  50% {
+    opacity: 1;
   }
 
-
-  .container{
-    width: 250px;
-    height: 250px;
-    border-radius: 20px;
+  to {
+    opacity: 0;
+    left: 100%;
   }
-  .container:hover {
+}
 
-    cursor: pointer;
-    transform: scale(1.2);
-    background-color: #5390D9;
-}  
-  .cards {
-    text-decoration: none;
-  }
+.button {
+  background-color: #def2fb;
+  border: 0;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #67a2e9cb;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  box-shadow: 0 1px 3px 0 rgba(31, 48, 73, 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  font-family: Cairo Play;
+}
 
-      @keyframes sh02 {
-        from {
-          opacity: 0;
-          left: 0%;
-        }
-      
-        50% {
-          opacity: 1;
-        }
-      
-        to {
-          opacity: 0;
-          left: 100%;
-        }
-      }
-    
-  
-      .button {
-        background-color: #def2fb;
-        border: 0;
-        border-radius: .5rem;
-        box-sizing: border-box;
-        color: #67a2e9cb;
-        font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 1.25rem;
-        padding: .50rem 0.5rem;
-        text-align: center;
-        text-decoration: none #D1D5DB solid;
-        box-shadow: 0 1px 3px 0 rgba(31, 48, 73, 0.7), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        cursor: pointer;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        font-family: Cairo Play;
-        
-      }
-    
-      .button:hover {
-        background-color: rgb(230, 241, 251);  
-        transform: scale(1.2);
-      }
-    
-      .button:focus {
-        outline: 2px solid transparent;
-        outline-offset: 2px;
-      }
-    
-      .button:focus-visible {
-        box-shadow: none;
-      }
+.button:hover {
+  background-color: rgb(230, 241, 251);
+  transform: scale(1.2);
+}
 
+.button:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
 
-  .loading {
-      margin: 0;
-      padding: 0;
-      color: white;
-      font-size: 60px;
-      font-family: Cairo Play;
-    }
-    
+.button:focus-visible {
+  box-shadow: none;
+}
 
-    .buttonD:hover {
+.loading {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 60px;
+  font-family: Cairo Play;
+}
 
-      cursor: pointer;
-    
-      background-color: #ffffff;
-  }
+.buttonD:hover {
+  cursor: pointer;
 
+  background-color: #ffffff;
+}
 
 /* CSS */

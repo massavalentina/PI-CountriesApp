@@ -1,54 +1,46 @@
-.navbar{
-    background-color: #4682cb;
-    display: flex;
-    height: 50px;
-    align-items: center;
+.navbar {
+  background-color: #4682cb;
+  display: flex;
+  height: 50px;
+  align-items: center;
 }
 
-.title{
-   text-decoration: none;
-   font-family: Cairo Play;
-   font-size: 30px;
-   margin: 30px;
-   margin-right: 600px;
+.title {
+  text-decoration: none;
+  font-family: Cairo Play;
+  font-size: 30px;
+  margin: 30px;
+  margin-right: 600px;
 }
 
-.buttons{
-    font-family: Cairo Play;
-    text-decoration: none;
-    margin: 10px ;
-    font-size: 14px;
-    position: relative;
-    padding: 5px 15px;
-    border-radius: 40px;
-    border: 2px solid #3170bd;
-    color: rgb(234, 242, 248);
-    text-transform: uppercase;
-    font-weight: 500;
-    background-color: #3e7ac3;
-    text-decoration: none;
+.buttons {
+  font-family: Cairo Play;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 14px;
+  position: relative;
+  padding: 5px 15px;
+  border-radius: 40px;
+  border: 2px solid #3170bd;
+  color: rgb(234, 242, 248);
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #3e7ac3;
+  text-decoration: none;
 }
 
-.buttonsH{
-    font-family: Cairo Play;
-    text-decoration: none;
-    margin: 10PX;
-    font-size: 14px;
-    position: relative;
-    padding: 5px 15px;
-    border-radius: 40px;
-    border: 2px solid #3170bd;
-    color: rgb(234, 242, 248);
-    text-transform: uppercase;
-    font-weight: 500;
-    background-color: #3e7ac3;
-    margin-left: 200px;
+.buttonsH {
+  font-family: Cairo Play;
+  text-decoration: none;
+  margin: 10px;
+  font-size: 14px;
+  position: relative;
+  padding: 5px 15px;
+  border-radius: 40px;
+  border: 2px solid #3170bd;
+  color: rgb(234, 242, 248);
+  text-transform: uppercase;
+  font-weight: 500;
+  background-color: #3e7ac3;
+  margin-left: 200px;
 }
-
-
-
-
-
-
-
-
